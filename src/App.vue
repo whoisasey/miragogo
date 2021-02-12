@@ -19,6 +19,7 @@ export default {
     return {}
   },
   mounted() {
+    // via https://codepen.io/anikey99/pen/azmYQY
     $(document).ready(function () {
 	$('#nav').localScroll(800);
 	
