@@ -1,39 +1,27 @@
 <template>
-<First />
-<Second />
-<Third />
+  <div class="paraContainer">
+
+  <First />
+  <Second />
+  <Third />
+
+  </div>    
 </template>
 
 <script>
-import First from './components/First.vue'
-import Second from './components/Second.vue'
-import Third from './components/Third.vue'
+import First from './components/First'
+import Second from './components/Second'
+import Third from './components/Third'
+
 export default {
   name: 'App',
   components: {
-    First,
-    Second,
-    Third
+First, Second, Third
   },
-  data() {
+  data(){
     return {}
   },
-  mounted() {
-    // via https://codepen.io/anikey99/pen/azmYQY
-    $(document).ready(function () {
-	$('#nav').localScroll(800);
-	
-	//.parallax(xPosition, speedFactor, outerHeight) options:
-	//xPosition - Horizontal position of the element
-	//inertia - speed to move relative to vertical scroll. Example: 0.1 is one tenth the speed of scrolling, 2 is twice the speed of scrolling
-	//outerHeight (true/false) - Whether or not jQuery should use it's outerHeight option to determine when a section is in the viewport
-	$('#intro').parallax("50%", 0.1);
-	$('#second').parallax("50%", 0.1);
-	$('.bg').parallax("50%", 0.4);
-	$('#third').parallax("50%", 0.3);
 
-})
-  }
 }
 </script>
 
@@ -43,54 +31,75 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: whitesmoke;
 }
 
-.float-left {
-  float: left;
-  margin: 0 0 0 20px;
+.stretcher{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 5000px;
 }
 
-.float-right {
-  float: right;
-  margin: 0 20px 0 0;
+.stretchDiv{
+    height: 100px;
+    width: 400px;
+    border: solid;
+
+}
+/* this is the body divs */
+h1{
+    text-align: center;
+    font-size: 36px;
+    margin: 100px;
+    font-size: 60px;
+    letter-spacing: 2px;
+}
+h2{
+    text-align: center;
+    font-size: 36px;
+    font-size: 60px;
+    letter-spacing: 2px;
+    
+}
+.paraContainer{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 5000px;
+    height: calc(100vh - 2em);
+
 }
 
-.center {
-  font-size: 2.5em;
-  padding: 80px 0 0 0;
-  text-align: center;
+.para{
+   	display: flex;
+	justify-content: center;
+	align-items: center;
+  	width: 20%;
 }
 
-#nav {
-  list-style: none;
-  position: fixed;
-  right: 20px;
+.parainner {
+
+   	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-#nav li {
-  margin: 0 0 15px 0;
+body::-webkit-scrollbar {
+    width: 1em;
 }
-
-#header,
-#intro,
-#second {
-  width: 100%;
+ 
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 2px rgba(0,0,0,0.3);
+    box-shadow: inset 2px rgba(0,0,0,0.3) ;
 }
-
-.story {
-  margin: 0 auto;
-  min-width: 980px;
-  overflow: auto;
-  width: 980px;
-}
-
-.story .float-left,
-.story .float-right {
-  padding: 100px 0 0 0;
-  position: relative;
-  width: 350px;
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(0,255,2);
+  box-shadow: 15px 5px 4px grey;
+  border-radius: 10%;
+  border:solid black 2px;
+  outline: 20px solid ;
 }
 
 </style>
